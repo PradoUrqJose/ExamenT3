@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Disenio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/site1.css" />
+
+<section class="light">
+	<div class="container py-2">
+		<div class="h1 text-center text-dark" id="pageHeaderTitle">Libros Diseño de Software</div>
+
+		<article class="postcard light blue">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="https://m.media-amazon.com/images/I/51szD9HC9pL._SX342_SY445_.jpg" alt="Design Patterns" />
+			</a>
+			<div class="postcard__text t-dark">
+				<h1 class="postcard__title blue"><a href="#">Design Patterns: Elements of Reusable Object-Oriented Software</a></h1>
+				<div class="postcard__subtitle small">
+					<time datetime="2020-05-25 12:00:00">
+						<i class="fas fa-calendar-alt mr-2"></i> Lun, Oct 31th 1994
+					</time>
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt"> Este libro es un clásico en el campo del diseño de software. Introduce 23 patrones de diseño que abordan problemas comunes en el desarrollo de software orientado a objetos. Es fundamental para entender cómo crear soluciones reutilizables y mantenibles.</div>
+				<ul class="postcard__tagbox">
+					<li class="tag__item"><i class="fa-solid fa-user-large mr-2"></i> Erich Gamma</li>
+					<li class="tag__item"><i class="fa-solid fa-user-large mr-2"></i> Richard Helm</li>
+					<li class="tag__item"><i class="fa-solid fa-book-open"></i> 416 </li>
+					<li class="tag__item play blue">
+						<a href="https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Comprar</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+		<article class="postcard light red">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="https://m.media-amazon.com/images/I/41bOkXnNBjL._SY445_SX342_.jpg" alt="Image Title" />
+			</a>
+			<div class="postcard__text t-dark">
+				<h1 class="postcard__title red"><a href="#"> Clean Code: A Handbook of Agile Software Craftsmanship</a></h1>
+				<div class="postcard__subtitle small">
+					<time datetime="2020-05-25 12:00:00">
+						<i class="fas fa-calendar-alt mr-2"></i> Vie, Ago 1st 2008
+					</time>
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">Este libro se centra en las mejores prácticas para escribir código limpio y mantenible. Robert C. Martin, también conocido como "Uncle Bob," ofrece principios y consejos prácticos para mejorar la calidad del código y reducir la deuda técnica.</div>
+				<ul class="postcard__tagbox">
+					<li class="tag__item"><i class="fa-solid fa-user-large mr-2"></i> Robert C. Martin</li>
+					<li class="tag__item"><i class="fa-solid fa-book-open"></i> 464  </li>
+					<li class="tag__item play blue">
+						<a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Comprar</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+	</div>
+</section>
+
+<script src="~/js/site1.js" asp-append-version="true"></script>

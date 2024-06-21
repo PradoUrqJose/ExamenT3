@@ -1,0 +1,171 @@
+﻿@model IEnumerable<T3_Prado_Jose_Gonzales_Diego.Models.Libro>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-5">
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h2 class="text-primary">Lista de Libros</h2>
+        </div>
+        <div class="col-md-6 text-end">
+            <a asp-controller="Libro" asp-action="Crear" class="button-30">Nuevo Libro</a>
+        </div>
+    </div>
+
+    @if (Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" class="col-title">Título</th>
+                        <th scope="col" class="col-author">Autor</th>
+                        <th scope="col" class="col-theme">Tema</th>
+                        <th scope="col" class="col-editorial">Editorial</th>
+                        <th scope="col" class="col-year">Año Publicación</th>
+                        <th scope="col" class="col-pages">Páginas</th>
+                        <th scope="col" class="col-category">Categoría</th>
+                        <th scope="col" class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="col-title">@item.Titulo</td>
+                            <td class="col-author">@item.Autor</td>
+                            <td class="col-theme">@item.Tema</td>
+                            <td class="col-editorial">@item.Editorial</td>
+                            <td class="col-year">@item.AnioPublicacion</td>
+                            <td class="col-pages">@item.Paginas</td>
+                            <td class="col-category">@item.Categoria</td>
+                            <td class="text-center">
+                                <div class="btn-group" role="group">
+                                    <a asp-controller="Libro" asp-action="Editar" asp-route-Id="@item.Id" class="btn btn-outline-primary">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a asp-controller="Libro" asp-action="Eliminar" asp-route-Id="@item.Id" class="btn btn-outline-danger">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            No hay registros en la categoría.
+        </div>
+    }
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container h2 {
+        font-weight: bold;
+    }
+
+    .table th, .table td {
+        vertical-align: middle;
+    }
+
+    .btn-group .btn {
+        min-width: 40px;
+    }
+
+    .table thead th {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    .alert {
+        margin-top: 20px;
+    }
+
+    .col-title {
+        width: 25%;
+    }
+
+    .col-author {
+        width: 20%;
+    }
+
+    .col-theme {
+        width: 15%;
+    }
+
+    .col-editorial {
+        width: 15%;
+    }
+
+    .col-year {
+        width: 10%;
+    }
+
+    .col-pages {
+        width: 10%;
+    }
+
+    .col-category {
+        width: 15%;
+    }
+
+    /* CSS */
+    .button-30 {
+        align-items: center;
+        appearance: none;
+        background-color: #FCFCFD;
+        border-radius: 4px;
+        border-width: 0;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+        box-sizing: border-box;
+        color: #36395A;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: "JetBrains Mono",monospace;
+        height: 48px;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        padding-left: 16px;
+        padding-right: 16px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s,transform .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        will-change: box-shadow,transform;
+        font-size: 18px;
+    }
+
+    .button-30:focus {
+        box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    }
+
+    .button-30:hover {
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        transform: translateY(-2px);
+    }
+
+    .button-30:active {
+        box-shadow: #D6D6E7 0 3px 7px inset;
+        transform: translateY(2px);
+    }
+
+
+</style>
